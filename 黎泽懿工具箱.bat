@@ -34,47 +34,46 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-:: Ä¬ÈÏÏÂÔØÄ¿Â¼
+:: é»˜è®¤ä¸‹è½½ç›®å½•
 set "Downloads_INSTALL_DIR=C:\Program Files\Downloads"
 
-:: ClassIsland°²×°Ä¿Â¼
+:: ClassIslandå®‰è£…ç›®å½•
 set "ClassIsland_INSTALL_DIR=C:\Program Files\ClassIsland"
 
-:: ÖÇ»æ½Ì°²×°Ä¿Â¼
-set "ZHIHUIJIAO_INSTALL_DIR=C:\Program Files\ÖÇ»æ½Ì"
+:: æ™ºç»˜æ•™å®‰è£…ç›®å½•
+set "ZHIHUIJIAO_INSTALL_DIR=C:\Program Files\æ™ºç»˜æ•™"
 
-:: ÔËĞĞÊ±»·¾³ÏÂÔØÁ´½Ó
+:: è¿è¡Œæ—¶ç¯å¢ƒä¸‹è½½é“¾æ¥
 set "URL_RUNTIME=https://download.visualstudio.microsoft.com/download/pr/bb581716-4cca-466e-9857-512e2371734b/5fe261422a7305171866fd7812d0976f/windowsdesktop-runtime-8.0.7-win-x64.exe"
 
-:: ÎÈ¶¨°æºÍ²âÊÔ°æClassIslandÏÂÔØÁ´½Ó
+:: ç¨³å®šç‰ˆå’Œæµ‹è¯•ç‰ˆClassIslandä¸‹è½½é“¾æ¥
 set "URL_STABLE=https://github.com/ClassIsland/ClassIsland/releases/download/1.4.0.4/ClassIsland.zip" 
 set "URL_TEST=https://github.com/ClassIsland/ClassIsland/releases/download/1.4.1.2/ClassIsland.zip" 
 
-:: ClassIsland×ÊÔ´ÏÂÔØÁ´½Ó
-set "URL_1=https://5jmpj3-my.sharepoint.com/personal/pan3_xiaomuxi_cn/_layouts/15/download.aspx?UniqueId=a1fcac7a-095f-4028-a480-d4cc7d619583&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIzZGE4Y2E3ZC0wM2E3LTQ1MTEtODIwYy1mNTkzMjVmZjQ4YTgiLCJhcHBfZGlzcGxheW5hbWUiOiIz5Y-35a2Y5YKo56Gs55uY77yIMjAyNC42LjHvvIkiLCJhcHBpZCI6Ijk4YTgxMmQ1LTI4ZjktNDk1ZC05NWI0LTYyYjU2OGRjOTAzNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC81am1wajMtbXkuc2hhcmVwb2ludC5jb21AZjgxOTg5YmItZWI0MC00ZmFiLTk3MDktNDQ4MWEwMzRmM2I0IiwiZXhwIjoiMTcyMDg2NzY2MiJ9.CgoKBHNuaWQSAjY0EgsItPvG_NvKkT0QBRoOMjAuMTkwLjE0NC4xNzIqLE8yNUs2cGFScmpKajJOcS90YlVwMDdqMWgzb1FRa2ZQSkxZZDg5SjMrY1U9MJIBOAFCEKE72qlaAAAwjv_OItI1zXNKEGhhc2hlZHByb29mdG9rZW5yKTBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMmFlNTI0MzBlQGxpdmUuY29tegEyggESCbuJGfhA66tPEZcJRIGgNPO0kgEEM-WPt5oBBue9keebmKIBEHBhbjNAeGlhb211eGkuY26qARAxMDAzMjAwMkFFNTI0MzBFsgEOYWxsZmlsZXMud3JpdGXIAQE.vc-pDVh6ojUFgpApAkZsMWXDbSbDx5KsJbWPnwIXIKQ&ApiVersion=2.0" 
+:: ClassIslandèµ„æºä¸‹è½½é“¾æ¥
+set "URL_1=https://5jmpj3-my.sharepoint.com/personal/pan3_xiaomuxi_cn/_layouts/15/download.aspx?UniqueId=6fbd0a6e-cd3a-4bd7-b60a-8c19dba93e74&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIzZGE4Y2E3ZC0wM2E3LTQ1MTEtODIwYy1mNTkzMjVmZjQ4YTgiLCJhcHBfZGlzcGxheW5hbWUiOiIz5Y-35a2Y5YKo56Gs55uY77yIMjAyNC42LjHvvIkiLCJhcHBpZCI6Ijk4YTgxMmQ1LTI4ZjktNDk1ZC05NWI0LTYyYjU2OGRjOTAzNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC81am1wajMtbXkuc2hhcmVwb2ludC5jb21AZjgxOTg5YmItZWI0MC00ZmFiLTk3MDktNDQ4MWEwMzRmM2I0IiwiZXhwIjoiMTcyMDg3MTI3NiJ9.CgoKBHNuaWQSAjY0EgsIqLKvmOnMkT0QBRoOMjAuMTkwLjE0NC4xNzIqLHFzRWlRSHJ6VFBQRnB6bnZ1TUxOVi9Rb3dYS3J0bWRQRHZtWlF2T25Fb0U9MJIBOAFCEKE73huG4AAwjv_FGAGUMVlKEGhhc2hlZHByb29mdG9rZW5yKTBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMmFlNTI0MzBlQGxpdmUuY29tegEyggESCbuJGfhA66tPEZcJRIGgNPO0kgEEM-WPt5oBBue9keebmKIBEHBhbjNAeGlhb211eGkuY26qARAxMDAzMjAwMkFFNTI0MzBFsgEOYWxsZmlsZXMud3JpdGXIAQE.UH8GRfU2RKIalYy47YFmYXJolkxi6R32464mTmRT23o&ApiVersion=2.0" 
 
-:: ÖÇ»æ½Ì×ÊÔ´ÏÂÔØÁ´½Ó
-set "URL_ZHIHUIJIAO=https://5jmpj3-my.sharepoint.com/personal/pan3_xiaomuxi_cn/_layouts/15/download.aspx?UniqueId=e1caa923-c66f-4230-b327-c7b99952ab60&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIzZGE4Y2E3ZC0wM2E3LTQ1MTEtODIwYy1mNTkzMjVmZjQ4YTgiLCJhcHBfZGlzcGxheW5hbWUiOiIz5Y-35a2Y5YKo56Gs55uY77yIMjAyNC42LjHvvIkiLCJhcHBpZCI6Ijk4YTgxMmQ1LTI4ZjktNDk1ZC05NWI0LTYyYjU2OGRjOTAzNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC81am1wajMtbXkuc2hhcmVwb2ludC5jb21AZjgxOTg5YmItZWI0MC00ZmFiLTk3MDktNDQ4MWEwMzRmM2I0IiwiZXhwIjoiMTcyMDg2NzY5MCJ9.CgoKBHNuaWQSAjY0EgsI5suHg97KkT0QBRoOMjAuMTkwLjE0NC4xNzIqLGxUTkFCMXNZNDU1YW4zbU52VlFwTUZQTm45Y2F4OHJyVTh3NFBaY0hSWGM9MJIBOAFCEKE72rARYAAwjv_Izoc1OsRKEGhhc2hlZHByb29mdG9rZW5yKTBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMmFlNTI0MzBlQGxpdmUuY29tegEyggESCbuJGfhA66tPEZcJRIGgNPO0kgEEM-WPt5oBBue9keebmKIBEHBhbjNAeGlhb211eGkuY26qARAxMDAzMjAwMkFFNTI0MzBFsgEOYWxsZmlsZXMud3JpdGXIAQE.HMX7TXdylzHFRIT-7E6SUaUAiCK2lr0Z1fP9Eqh2hWk&ApiVersion=2.0" 
+:: æ™ºç»˜æ•™èµ„æºä¸‹è½½é“¾æ¥
+set "URL_ZHIHUIJIAO=https://5jmpj3-my.sharepoint.com/personal/pan3_xiaomuxi_cn/_layouts/15/download.aspx?UniqueId=40ebbe65-f7c4-4660-b679-7a5a6320e9e0&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIzZGE4Y2E3ZC0wM2E3LTQ1MTEtODIwYy1mNTkzMjVmZjQ4YTgiLCJhcHBfZGlzcGxheW5hbWUiOiIz5Y-35a2Y5YKo56Gs55uY77yIMjAyNC42LjHvvIkiLCJhcHBpZCI6Ijk4YTgxMmQ1LTI4ZjktNDk1ZC05NWI0LTYyYjU2OGRjOTAzNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC81am1wajMtbXkuc2hhcmVwb2ludC5jb21AZjgxOTg5YmItZWI0MC00ZmFiLTk3MDktNDQ4MWEwMzRmM2I0IiwiZXhwIjoiMTcyMDg3MTI4NyJ9.CgoKBHNuaWQSAjY0EgsIkq3qherMkT0QBRoOMjAuMTkwLjE0NC4xNzIqLFN5TzhxOHJoTFFQWEpPMHVMVGo4N1hVRzFNOCtFWVY3V3U5VEpsUk5oYzQ9MJIBOAFCEKE73h5UMAAwetOrIyTCg8VKEGhhc2hlZHByb29mdG9rZW5yKTBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMmFlNTI0MzBlQGxpdmUuY29tegEyggESCbuJGfhA66tPEZcJRIGgNPO0kgEEM-WPt5oBBue9keebmKIBEHBhbjNAeGlhb211eGkuY26qARAxMDAzMjAwMkFFNTI0MzBFsgEOYWxsZmlsZXMud3JpdGXIAQE.aCgAXM4EJpe0RoDwMLmk6MXaZSYfCWSBXdRy-fiuReg&ApiVersion=2.0" 
 
-:: ÓÃ»§Ñ¡Ôñ
+:: ç”¨æˆ·é€‰æ‹©
 :choice_prompt
-echo =======================================================================
-echo ÇëÑ¡Ôñ°²×°Èí¼ş¼°°æ±¾£º
-echo [0] ÍË³ö£¨²»Ö´ĞĞÈÎºÎ°²×°£©
-echo [1] °²×° ClassIsland ÎÈ¶¨°æ ¹Ù·½Ô´(1.4.04)-Âı
-echo [2] °²×° ClassIsland ²âÊÔ°æ ¹Ù·½Ô´(1.4.12)-Âı
-echo [3] °²×° ClassIsland ²âÊÔ°æ ÀèÔóÜ²-¿Î±í¼¯¿Ø°æ(1.4.12)-¿ì
-echo [4] °²×° windowsdesktop ¹Ù·½°æ ClassIslandÔËĞĞ»·¾³(8.0.7)-¿ì
-echo [5] °²×° ÖÇ»æ½Ì ¹«²â°æ ÍøÅÌÔ´(20240708b)-¿ì
-echo =======================================================================
-echo À©Õ¹¹¦ÄÜ£º
-echo [A] ¹ØÓÚ (ÀèÔóÜ²¹¤¾ßÏä)
-echo [B] Ğ¶ÔØ (ËùÓĞÔÚÁĞ±íÖĞµÄÈí¼ş)-»¹²»Èç×Ô¼ºÉ¾
-echo [C] ÏÂÔØ (×Ô¶¨ÒåÏÂÔØÁ´½Ó¡¢×Ô¶¨ÒåÏÂÔØÄ¿Â¼)-ÀÃ
-echo =======================================================================
-set /P choice=ÇëÊäÈë[ ]ÖĞµÄÊı×Ö»ò×ÖÄ¸:
+echo è¯·é€‰æ‹©å®‰è£…è½¯ä»¶åŠç‰ˆæœ¬ï¼š
+echo [0] é€€å‡ºï¼ˆä¸æ‰§è¡Œä»»ä½•å®‰è£…ï¼‰
+echo [1] å®‰è£… ClassIsland ç¨³å®šç‰ˆ å®˜æ–¹æº(1.4.04)-æ…¢
+echo [2] å®‰è£… ClassIsland æµ‹è¯•ç‰ˆ å®˜æ–¹æº(1.4.12)-æ…¢
+echo [3] å®‰è£… ClassIsland æµ‹è¯•ç‰ˆ é»æ³½æ‡¿-è¯¾è¡¨é›†æ§ç‰ˆ(1.4.12)-å¿«
+echo [4] å®‰è£… windowsdesktop å®˜æ–¹ç‰ˆ ClassIslandè¿è¡Œç¯å¢ƒ(8.0.7)-å¿«
+echo [5] å®‰è£… æ™ºç»˜æ•™ å…¬æµ‹ç‰ˆ ç½‘ç›˜æº(20240708b)-å¿«
+echo .
+echo æ‰©å±•åŠŸèƒ½ï¼š
+echo [A] å…³äº (é»æ³½æ‡¿å·¥å…·ç®±)
+echo [B] å¸è½½ (æ‰€æœ‰åœ¨åˆ—è¡¨ä¸­çš„è½¯ä»¶)-è¿˜ä¸å¦‚è‡ªå·±åˆ 
+echo [C] ä¸‹è½½ (è‡ªå®šä¹‰ä¸‹è½½é“¾æ¥ã€è‡ªå®šä¹‰ä¸‹è½½ç›®å½•)-çƒ‚
+echo .
+set /P choice=è¯·è¾“å…¥[ ]ä¸­çš„æ•°å­—æˆ–å­—æ¯:
 
-:: ¸ù¾İÓÃ»§ÊäÈëÑ¡Ôñ°²×°°æ±¾
+:: æ ¹æ®ç”¨æˆ·è¾“å…¥é€‰æ‹©å®‰è£…ç‰ˆæœ¬
 if "%choice%"=="0" goto exit
 if "%choice%"=="1" (
     set "DOWNLOAD_URL=%URL_STABLE%"
@@ -98,7 +97,7 @@ if "%choice%"=="4" (
 )
 if "%choice%"=="5" (
     set "DOWNLOAD_URL=%URL_ZHIHUIJIAO%"
-    set "FILE_NAME=ÖÇ»æ½Ì.zip"
+    set "FILE_NAME=æ™ºç»˜æ•™.zip"
     goto thread_download
 )
 if /I "%choice%"=="A" (
@@ -111,133 +110,103 @@ if /I "%choice%"=="C" (
     goto custom_download
 )
 
-:: Ä¬ÈÏÇé¿ö£¬Èç¹ûÊäÈë²»ÊÇ0-5/A-B
-echo ÎŞĞ§µÄÊäÈë£¬ÇëÑ¡Ôñ0µ½5»òÕßAµ½BÖ®¼ä¡£
+:: é»˜è®¤æƒ…å†µï¼Œå¦‚æœè¾“å…¥ä¸æ˜¯0-5/A-B
+echo æ— æ•ˆçš„è¾“å…¥ï¼Œè¯·é€‰æ‹©0åˆ°5æˆ–è€…Aåˆ°Bä¹‹é—´ã€‚
 pause
 cls
 goto after_action
 
-:: ÓÃ»§Ñ¡ÔñÏÂÔØ·½Ê½
+:: ç”¨æˆ·é€‰æ‹©ä¸‹è½½æ–¹å¼
 :thread_download
-echo ======================================================================
-echo Ñ¡ÔñÏÂÔØ·½Ê½(ÍÆ¼öÊ¹ÓÃ [2] ):
-echo [1] µ¥Ïß³ÌÏÂÔØ(Ê¹ÓÃ powershell)
-echo [2] ¶àÏß³ÌÏÂÔØ(Ê¹ÓÃ curl)
-echo [3] ¶àÏß³ÌÏÂÔØ(Ê¹ÓÃ wget)
-echo [0] ·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ======================================================================
-set /P download_choice=ÇëÊäÈë[ ]ÖĞµÄÊı×Ö:
+    set "download_choice="
+    echo.
+    echo é€‰æ‹©ä¸‹è½½æ–¹å¼(æ¨èä½¿ç”¨ [2] ):
+    echo [1] å•çº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ PowerShell)
+    echo [2] å¤šçº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ curl)
+    echo [3] å¤šçº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ wget)
+    echo [0] è¿”å›ä¸Šä¸€çº§èœå•
+    echo.
+    set /P download_choice=è¯·è¾“å…¥[ ]ä¸­çš„æ•°å­—:
 
-:: ¸ù¾İÓÃ»§ÊäÈëÑ¡ÔñÏÂÔØ·½Ê½
-if "%download_choice%"=="0" goto after_action
-if "%download_choice%"=="1" (
-    goto :single_thread_download
-) else if "%download_choice%"=="2" (
-    goto :multi_thread_download_with_curl
-) else if "%download_choice%"=="3" (
-    goto :multi_thread_download_with_wget
-) else (
-    echo ÎŞĞ§µÄÊäÈë£¬ÇëÑ¡Ôñ0µ½3Ö®¼äµÄÊı×Ö¡£
+    :: éªŒè¯è¾“å…¥å¹¶ä½œå‡ºé€‰æ‹©
+    if "!download_choice!"=="0" goto after_action
+    if "!download_choice!"=="1" (
+        set "download_method=powershell"
+        goto perform_download
+    )
+    if "!download_choice!"=="2" (
+        set "download_method=curl"
+        goto perform_download
+    )
+    if "!download_choice!"=="3" (
+        set "download_method=wget"
+        goto perform_download
+    )
+    echo æ— æ•ˆçš„è¾“å…¥ï¼Œè¯·é€‰æ‹©0åˆ°3ä¹‹é—´çš„æ•°å­—ã€‚
     pause
     goto thread_download
-)
 
-:: µ¥Ïß³ÌÏÂÔØ
-:single_thread_download
+:: æ‰§è¡Œä¸‹è½½
+:perform_download
+    set "DOWNLOAD_DIR=!Downloads_INSTALL_DIR!"
+    set "CUSTOM_DIR=!DOWNLOAD_DIR!"
 
-:: Ñ¯ÎÊÓÃ»§ÊÇ·ñÊ¹ÓÃÄ¬ÈÏÏÂÔØÄ¿Â¼»ò×Ô¶¨ÒåÄ¿Â¼
-echo ÇëÊäÈëÏÂÔØÎÄ¼şµÄ±£´æÄ¿Â¼£¨Ä¬ÈÏÎª "%Downloads_INSTALL_DIR%"£¬Ö±½Ó°´»Ø³µÊ¹ÓÃÄ¬ÈÏ£©:
-set /P DOWNLOAD_DIR=
+    :: è¯·æ±‚ç”¨æˆ·è‡ªå®šä¹‰ä¸‹è½½ç›®å½•ï¼ˆå¯é€‰ï¼‰
+    echo.
+    echo è¯·è¾“å…¥ä¸‹è½½æ–‡ä»¶çš„ä¿å­˜ç›®å½•ï¼ˆé»˜è®¤ä¸º "!DOWNLOAD_DIR!"ï¼Œç›´æ¥æŒ‰å›è½¦ä½¿ç”¨é»˜è®¤ï¼‰:
+    set /P CUSTOM_DIR=
+    if "!CUSTOM_DIR!"=="" set CUSTOM_DIR=!DOWNLOAD_DIR!
 
-:: ¼ì²éÓÃ»§ÊäÈëÊÇ·ñÎª¿Õ£¬Èç¹ûÎª¿ÕÔòÊ¹ÓÃÄ¬ÈÏÄ¿Â¼
-if "%DOWNLOAD_DIR%"=="" set DOWNLOAD_DIR=%Downloads_INSTALL_DIR%
+    :: æ£€æŸ¥ä¸‹è½½ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœä¸å­˜åœ¨åˆ™åˆ›å»º
+    if not exist "!CUSTOM_DIR!" mkdir "!CUSTOM_DIR!"
 
-:: ¼ì²éÏÂÔØÄ¿Â¼ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔò´´½¨
-if not exist "%DOWNLOAD_DIR%" mkdir "%DOWNLOAD_DIR%"
+    :: æ ¹æ®é€‰æ‹©çš„ä¸‹è½½æ–¹å¼æ‰§è¡Œä¸‹è½½
+    echo.
+    echo æ­£åœ¨ä½¿ç”¨ !download_method! ä¸‹è½½æ–‡ä»¶ "!FILE_NAME!" åˆ° "!CUSTOM_DIR!" ç›®å½•...
+    if /I "!download_method!"=="powershell" (
+        powershell -Command "Invoke-WebRequest -Uri '!DOWNLOAD_URL!' -OutFile '!CUSTOM_DIR!\!FILE_NAME!' -Verbose"
+    ) else if /I "!download_method!"=="curl" (
+        curl -o "!CUSTOM_DIR!\!FILE_NAME!" "!DOWNLOAD_URL!"
+    ) else if /I "!download_method!"=="wget" (
+        wget -O "!CUSTOM_DIR!\!FILE_NAME!" "!DOWNLOAD_URL!"
+    )
 
-:: ÏÂÔØÎÄ¼ş
-echo ÕıÔÚÊ¹ÓÃµ¥Ïß³ÌÏÂÔØÎÄ¼ş "%FILE_NAME%"£¬ÇëÉÔºò...
-powershell -Command "Invoke-WebRequest -Uri '!DOWNLOAD_URL!' -OutFile '%Downloads_INSTALL_DIR%\%FILE_NAME%' -Verbose"
-if errorlevel 1 (
-    echo µ¥Ïß³ÌÏÂÔØÊ§°Ü£¬Çë¼ì²éÍøÂçÁ¬½ÓºÍÁ´½ÓÓĞĞ§ĞÔ¡£
-    pause
-    goto after_action
-)
-echo µ¥Ïß³ÌÏÂÔØ³É¹¦¡£
-goto after_download
+    :: æ£€æŸ¥ä¸‹è½½æ˜¯å¦æˆåŠŸ
+    if errorlevel 1 (
+        echo ä¸‹è½½å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥å’Œé“¾æ¥æœ‰æ•ˆæ€§ã€‚
+        pause
+        goto after_action
+    )
+    echo ä¸‹è½½å®Œæˆã€‚
 
-:: Ê¹ÓÃcurl½øĞĞ¶àÏß³ÌÏÂÔØ
-:multi_thread_download_with_curl
+    :: ä¸‹è½½åçš„æ“ä½œï¼ˆå¦‚æœæœ‰ï¼‰
+    echo æ­£åœ¨å¤„ç†ä¸‹è½½çš„æ–‡ä»¶ "!FILE_NAME!" ...
+    goto after_download
 
-:: Ñ¯ÎÊÓÃ»§ÊÇ·ñÊ¹ÓÃÄ¬ÈÏÏÂÔØÄ¿Â¼»ò×Ô¶¨ÒåÄ¿Â¼
-echo ÇëÊäÈëÏÂÔØÎÄ¼şµÄ±£´æÄ¿Â¼£¨Ä¬ÈÏÎª "%Downloads_INSTALL_DIR%"£¬Ö±½Ó°´»Ø³µÊ¹ÓÃÄ¬ÈÏ£©:
-set /P DOWNLOAD_DIR=
-
-:: ¼ì²éÓÃ»§ÊäÈëÊÇ·ñÎª¿Õ£¬Èç¹ûÎª¿ÕÔòÊ¹ÓÃÄ¬ÈÏÄ¿Â¼
-if "%DOWNLOAD_DIR%"=="" set DOWNLOAD_DIR=%Downloads_INSTALL_DIR%
-
-:: ¼ì²éÏÂÔØÄ¿Â¼ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔò´´½¨
-if not exist "%DOWNLOAD_DIR%" mkdir "%DOWNLOAD_DIR%"
-
-:: ÏÂÔØÎÄ¼ş
-echo ÕıÔÚÊ¹ÓÃcurl½øĞĞ¶àÏß³ÌÏÂÔØÎÄ¼ş "%FILE_NAME%"£¬ÇëÉÔºò...
-curl -o "%Downloads_INSTALL_DIR%\%FILE_NAME%" "%DOWNLOAD_URL%"
-if %ERRORLEVEL% neq 0 (
-    echo ÏÂÔØÊ§°Ü£¬¿ÉÄÜÊÇÍøÂçÎÊÌâ»òÎÄ¼ş²»´æÔÚ£¬Çë¼ì²éºóÖØÊÔ¡£
-    pause
-    goto after_action
-)
-echo ÏÂÔØÍê³É¡£
-goto after_download
-
-:: Ê¹ÓÃwget½øĞĞ¶àÏß³ÌÏÂÔØ
-:multi_thread_download_with_wget
-
-:: Ñ¯ÎÊÓÃ»§ÊÇ·ñÊ¹ÓÃÄ¬ÈÏÏÂÔØÄ¿Â¼»ò×Ô¶¨ÒåÄ¿Â¼
-echo ÇëÊäÈëÏÂÔØÎÄ¼şµÄ±£´æÄ¿Â¼£¨Ä¬ÈÏÎª "%Downloads_INSTALL_DIR%"£¬Ö±½Ó°´»Ø³µÊ¹ÓÃÄ¬ÈÏ£©:
-set /P DOWNLOAD_DIR=
-
-:: ¼ì²éÓÃ»§ÊäÈëÊÇ·ñÎª¿Õ£¬Èç¹ûÎª¿ÕÔòÊ¹ÓÃÄ¬ÈÏÄ¿Â¼
-if "%DOWNLOAD_DIR%"=="" set DOWNLOAD_DIR=%Downloads_INSTALL_DIR%
-
-:: ¼ì²éÏÂÔØÄ¿Â¼ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔò´´½¨
-if not exist "%DOWNLOAD_DIR%" mkdir "%DOWNLOAD_DIR%"
-
-:: ÏÂÔØÎÄ¼ş
-echo ÕıÔÚÊ¹ÓÃwget½øĞĞ¶àÏß³ÌÏÂÔØÎÄ¼ş "%FILE_NAME%"£¬ÇëÉÔºò...
-wget -O "%Downloads_INSTALL_DIR%\%FILE_NAME%" "%DOWNLOAD_URL%"
-if errorlevel 1 (
-    echo ÏÂÔØÊ§°Ü£¬¿ÉÄÜÊÇÍøÂçÎÊÌâ»òÎÄ¼ş²»´æÔÚ£¬Çë¼ì²éºóÖØÊÔ¡£
-    pause
-    goto after_action
-)
-echo ÏÂÔØÍê³É¡£
-goto after_download
-
-:: ÏÂÔØÍê³ÉºóµÄ²Ù×÷
+:: ä¸‹è½½å®Œæˆåçš„æ“ä½œ
 :after_download
-echo ÕıÔÚ´¦ÀíÏÂÔØµÄÎÄ¼ş "%FILE_NAME%" ...
+echo æ­£åœ¨å¤„ç†ä¸‹è½½çš„æ–‡ä»¶ "%FILE_NAME%" ...
 
-:: ¸ù¾İÎÄ¼şÀ©Õ¹ÃûÉèÖÃ±äÁ¿EXT
-:: È·¶¨ÎÄ¼şÀ©Õ¹Ãû²¢½øĞĞÏàÓ¦µÄ´¦Àí
+:: æ ¹æ®æ–‡ä»¶æ‰©å±•åè®¾ç½®å˜é‡EXT
+:: ç¡®å®šæ–‡ä»¶æ‰©å±•åå¹¶è¿›è¡Œç›¸åº”çš„å¤„ç†
 set "EXT=%FILE_NAME:~-4%"
 if /I "%EXT%"==".exe" (
     set "EXT=.exe"
 ) else if /I "%EXT%"==".zip" (
     set "EXT=.zip"
 ) else (
-    echo Î´ÖªµÄÎÄ¼şÀ©Õ¹Ãû "%EXT%"£¬ÇëÈ·±£ÎÄ¼şÊÇÓĞĞ§µÄ .exe »ò .zip ¸ñÊ½¡£
+    echo æœªçŸ¥çš„æ–‡ä»¶æ‰©å±•å "%EXT%"ï¼Œè¯·ç¡®ä¿æ–‡ä»¶æ˜¯æœ‰æ•ˆçš„ .exe æˆ– .zip æ ¼å¼ã€‚
     pause
     goto after_action
 )
 
-:: ¼ì²éÎÄ¼şÊÇ·ñÒÑ¾­ÏÂÔØ
+:: æ£€æŸ¥æ–‡ä»¶æ˜¯å¦å·²ç»ä¸‹è½½
 if exist "%Downloads_INSTALL_DIR%\%FILE_NAME%" (
-    echo ÕıÔÚ¼ì²éÎÄ¼ş "%FILE_NAME%" ...
+    echo æ­£åœ¨æ£€æŸ¥æ–‡ä»¶ "%FILE_NAME%" ...
     if /I "%EXT%"==".exe" (
-        echo ×¼±¸ÔËĞĞ°²×°³ÌĞò "%FILE_NAME%" ...
+        echo å‡†å¤‡è¿è¡Œå®‰è£…ç¨‹åº "%FILE_NAME%" ...
         start "" "%Downloads_INSTALL_DIR%\%FILE_NAME%"
-        :: µÈ´ı°²×°³ÌĞòÆô¶¯
+        :: ç­‰å¾…å®‰è£…ç¨‹åºå¯åŠ¨
         :wait_for_installer
         tasklist /fi "imagename eq %FILE_NAME:.exe=%" | find /i "%FILE_NAME:.exe=%"
         if errorlevel 1 goto delete_exe
@@ -245,10 +214,10 @@ if exist "%Downloads_INSTALL_DIR%\%FILE_NAME%" (
         goto wait_for_installer
         :delete_exe
         del "%Downloads_INSTALL_DIR%\%FILE_NAME%" 2>nul
-        echo °²×°³ÌĞòÔËĞĞÊ§°Ü£¬Çë¼ì²éºóÖØÊÔ¡£
+        echo å®‰è£…ç¨‹åºè¿è¡Œå¤±è´¥ï¼Œè¯·æ£€æŸ¥åé‡è¯•ã€‚
     ) else if /I "%EXT%"==".zip" (
-        echo ×¼±¸½âÑ¹ÎÄ¼ş "%FILE_NAME%" ...
-        :: ¸ù¾İÓÃ»§Ñ¡ÔñÉèÖÃ½âÑ¹Ä¿Â¼
+        echo å‡†å¤‡è§£å‹æ–‡ä»¶ "%FILE_NAME%" ...
+        :: æ ¹æ®ç”¨æˆ·é€‰æ‹©è®¾ç½®è§£å‹ç›®å½•
         if "%choice%"=="1" (
             set "UNZIP_DIR=%ClassIsland_INSTALL_DIR%"
         ) else if "%choice%"=="2" (
@@ -260,40 +229,40 @@ if exist "%Downloads_INSTALL_DIR%\%FILE_NAME%" (
         ) else if "%choice%"=="5" (
             set "UNZIP_DIR=%ZHIHUIJIAO_INSTALL_DIR%"
         ) else (
-            echo Î´ÖªµÄ´íÎó·¢ÉúÁË£¬Çë¼ì²éÄúµÄÑ¡Ôñ¡£
+            echo æœªçŸ¥çš„é”™è¯¯å‘ç”Ÿäº†ï¼Œè¯·æ£€æŸ¥æ‚¨çš„é€‰æ‹©ã€‚
             pause
             goto after_action
         )
-        :: Ê¹ÓÃPowerShell½âÑ¹ÎÄ¼ş
-        powershell -Command "try { Expand-Archive -LiteralPath '%Downloads_INSTALL_DIR%\%FILE_NAME%' -DestinationPath '!UNZIP_DIR!' -Force } catch { echo ½âÑ¹Ê§°Ü£¬ÇëÉÔºóÖØÊÔ¡£ pause; exit /b 1 }"
+        :: ä½¿ç”¨PowerShellè§£å‹æ–‡ä»¶
+        powershell -Command "try { Expand-Archive -LiteralPath '%Downloads_INSTALL_DIR%\%FILE_NAME%' -DestinationPath '!UNZIP_DIR!' -Force } catch { echo è§£å‹å¤±è´¥ï¼Œè¯·ç¨åé‡è¯•ã€‚ pause; exit /b 1 }"
         if errorlevel 1 (
-            echo ½âÑ¹Ê§°Ü£¬ÇëÉÔºóÖØÊÔ¡£
+            echo è§£å‹å¤±è´¥ï¼Œè¯·ç¨åé‡è¯•ã€‚
             pause
             goto after_action
         ) else (
-            echo ½âÑ¹³É¹¦¡£
-            :: É¾³ıÒÑ½âÑ¹µÄÑ¹ËõÎÄ¼ş
+            echo è§£å‹æˆåŠŸã€‚
+            :: åˆ é™¤å·²è§£å‹çš„å‹ç¼©æ–‡ä»¶
             del "%Downloads_INSTALL_DIR%\%FILE_NAME%" 2>nul
             if errorlevel 1 (
-                echo É¾³ıÑ¹ËõÎÄ¼şÊ§°Ü¡£
+                echo åˆ é™¤å‹ç¼©æ–‡ä»¶å¤±è´¥ã€‚
             ) else (
-                echo Ñ¹ËõÎÄ¼şÒÑÉ¾³ı¡£
+                echo å‹ç¼©æ–‡ä»¶å·²åˆ é™¤ã€‚
             )
         )
     ) else (
-        echo Î´ÖªµÄÎÄ¼şÀ©Õ¹Ãû "%EXT%"£¬Ö»Ö§³Ö .exe »ò .zip ÎÄ¼ş¡£
+        echo æœªçŸ¥çš„æ–‡ä»¶æ‰©å±•å "%EXT%"ï¼Œåªæ”¯æŒ .exe æˆ– .zip æ–‡ä»¶ã€‚
         pause
         goto after_action
     )
 ) else (
-    echo ÎÄ¼ş "%FILE_NAME%" ÏÂÔØÊ§°Ü¡£
+    echo æ–‡ä»¶ "%FILE_NAME%" ä¸‹è½½å¤±è´¥ã€‚
     pause
     goto after_action
 )
 
-:: ÔËĞĞÏÂÔØµÄÈí¼ş³ÌĞò
+:: è¿è¡Œä¸‹è½½çš„è½¯ä»¶ç¨‹åº
 :run_software
-:: »ñÈ¡Èí¼ş°²×°Ä¿Â¼
+:: è·å–è½¯ä»¶å®‰è£…ç›®å½•
 if "%choice%"=="1" (
     set "RUN_BATCH_PATH=%ClassIsland_INSTALL_DIR%\RunClassIsland.bat"
 ) else if "%choice%"=="2" (
@@ -306,299 +275,222 @@ if "%choice%"=="1" (
     set "RUN_BATCH_PATH=%ZHIHUIJIAO_INSTALL_DIR%\RunClassIsland.bat"
 )
 
-:: ÔÙ´Î¼ì²éÅú´¦ÀíÎÄ¼şÊÇ·ñ´æÔÚ²¢³¢ÊÔÔËĞĞ
+:: å†æ¬¡æ£€æŸ¥æ‰¹å¤„ç†æ–‡ä»¶æ˜¯å¦å­˜åœ¨å¹¶å°è¯•è¿è¡Œ
 :check_run_batch_file
 if exist "%RUN_BATCH_PATH%" (
-    echo ÕıÔÚÔËĞĞÈí¼ş...
+    echo æ­£åœ¨è¿è¡Œè½¯ä»¶...
     start "" "%RUN_BATCH_PATH%"
     goto after_action
 ) else (
-    echo ÔËĞĞÅú´¦ÀíÎÄ¼ş²»´æÔÚ¡£
-    echo =======================================================================
-    echo ÇëÑ¡ÔñÒªÔËĞĞµÄÈí¼ş°æ±¾£º
-    echo [1] ClassIsland (ÈÎºÎ°æ±¾)
-    echo [2] ClassIsland (ÔËĞĞ»·¾³)
-    echo [3] ÖÇ»æ½Ì (ÈÎºÎ°æ±¾)
-    echo [0] ·µ»ØÉÏÒ»¼¶²Ëµ¥
-    echo =======================================================================
-    set /P RUN_OPTION=ÇëÊäÈë[ ]ÖĞµÄÊı×Ö:
+    echo è¿è¡Œæ‰¹å¤„ç†æ–‡ä»¶ä¸å­˜åœ¨ã€‚
+    echo .
+    echo è¯·é€‰æ‹©è¦è¿è¡Œçš„è½¯ä»¶ç‰ˆæœ¬ï¼š
+    echo [1] ClassIsland (ä»»ä½•ç‰ˆæœ¬)
+    echo [2] ClassIsland (è¿è¡Œç¯å¢ƒ)
+    echo [3] æ™ºç»˜æ•™ (ä»»ä½•ç‰ˆæœ¬)
+    echo [0] è¿”å›ä¸Šä¸€çº§èœå•
+    echo .
+    set /P RUN_OPTION=è¯·è¾“å…¥[ ]ä¸­çš„æ•°å­—:
     if "%RUN_OPTION%"=="0" goto after_action
     if "%RUN_OPTION%"=="1" (
         set "RUN_BATCH=%ClassIsland_INSTALL_DIR%\ClassIsland.exe"
     ) else if "%RUN_OPTION%"=="2" (
         set "RUN_BATCH=%Downloads_INSTALL_DIR%\windowsdesktop-runtime-8.0.7-win-x64.exe"
     ) else if "%RUN_OPTION%"=="3" (
-        set "RUN_BATCH=%ZHIHUIJIAO_INSTALL_DIR%\ÖÇ»æ½Ì.exe"
+        set "RUN_BATCH=%ZHIHUIJIAO_INSTALL_DIR%\æ™ºç»˜æ•™.exe"
     ) else (
-        echo ÎŞĞ§µÄÊäÈë£¬ÇëÑ¡Ôñ0µ½3Ö®¼äµÄÊı×Ö¡£
+        echo æ— æ•ˆçš„è¾“å…¥ï¼Œè¯·é€‰æ‹©0åˆ°3ä¹‹é—´çš„æ•°å­—ã€‚
         pause
         goto check_run_batch_file
     )
 
-    :: ÔÙ´Î¼ì²éÅú´¦ÀíÎÄ¼şÊÇ·ñ´æÔÚ²¢³¢ÊÔÔËĞĞ
+    :: å†æ¬¡æ£€æŸ¥æ‰¹å¤„ç†æ–‡ä»¶æ˜¯å¦å­˜åœ¨å¹¶å°è¯•è¿è¡Œ
     if exist "%RUN_BATCH%" (
-        echo ÕıÔÚÔËĞĞÑ¡ÔñµÄÈí¼ş°æ±¾...
+        echo æ­£åœ¨è¿è¡Œé€‰æ‹©çš„è½¯ä»¶ç‰ˆæœ¬...
         start "" "%RUN_BATCH%"
     ) else (
-        echo Ñ¡ÔñµÄÈí¼ş°æ±¾Åú´¦ÀíÎÄ¼ş²»´æÔÚ¡£
+        echo é€‰æ‹©çš„è½¯ä»¶ç‰ˆæœ¬æ‰¹å¤„ç†æ–‡ä»¶ä¸å­˜åœ¨ã€‚
         pause
         goto after_action
     )
 )
 
-
-:: ×Ô¶¨ÒåÏÂÔØ
+:: è‡ªå®šä¹‰ä¸‹è½½å‡½æ•°
 :custom_download
-echo ======================================================================
-echo ÇëÑ¡ÔñÏÂÔØ·½Ê½£º
-echo [1] µ¥Ïß³ÌÏÂÔØ(Ê¹ÓÃ powershell)
-echo [2] ¶àÏß³ÌÏÂÔØ(Ê¹ÓÃ curl)
-echo [3] ¶àÏß³ÌÏÂÔØ(Ê¹ÓÃ wget)
-echo [0] ·µ»ØÉÏÒ»¼¶²Ëµ¥
-echo ======================================================================
-set /P download_choice=ÇëÊäÈë[ ]ÖĞµÄÊı×Ö:
+    set "DOWNLOAD_METHOD=0"
+    set "CUSTOM_URL="
+    set "CUSTOM_FILENAME=downloaded_file.ext"  ;; é»˜è®¤æ–‡ä»¶åå‰ç¼€
+    set "CUSTOM_DIR=%Downloads_INSTALL_DIR%"
+    set "USER_Downloads_INSTALL_DIR=%USERPROFILE%\Downloads"
 
-:: ÇëÇóÓÃ»§ÊäÈë×Ô¶¨ÒåÏÂÔØÁ´½ÓºÍÄ¿Â¼
-:input_custom_info
-echo ======================================================================
-echo ÇëÊäÈë×Ô¶¨ÒåÏÂÔØÁ´½Ó£¨È·±£Á´½ÓÓĞĞ§£¬ÀıÈç£ºhttp://example.com/file.zip£©:
-set /P "CUSTOM_URL="
-if "!CUSTOM_URL!"=="" goto input_custom_info_empty
+:: æ˜¾ç¤ºä¸‹è½½æ–¹å¼é€‰æ‹©èœå•
+    echo .
+    echo è¯·é€‰æ‹©ä¸‹è½½æ–¹å¼ï¼š
+    echo [1] å•çº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ PowerShell)
+    echo [2] å¤šçº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ curl)
+    echo [3] å¤šçº¿ç¨‹ä¸‹è½½(ä½¿ç”¨ wget)
+    echo [0] è¿”å›ä¸Šä¸€çº§èœå•
+    echo .
+    set /P DOWNLOAD_METHOD=è¯·è¾“å…¥æ•°å­—é€‰æ‹©ä¸‹è½½æ–¹å¼:
 
-:: ´Ó URL ÖĞÌáÈ¡ÎÄ¼şÃû£¬²¢¼ì²é³¤¶È
-for /f "tokens=1* delims=/" %%a in ("!CUSTOM_URL!") do set "FILE_NAME=%%b"
+:: æ ¹æ®ç”¨æˆ·é€‰æ‹©è¿”å›æˆ–ç»§ç»­
+    if "%DOWNLOAD_METHOD%"=="0" goto after_action
+    if "%DOWNLOAD_METHOD%"=="1" (
+        set "DOWNLOAD_CMD=powershell -Command Invoke-WebRequest -Uri '%CUSTOM_URL%' -OutFile '%CUSTOM_DIR%\%CUSTOM_FILENAME%' -Verbose"
+    ) else if "%DOWNLOAD_METHOD%"=="2" (
+        set "DOWNLOAD_CMD=curl -o '%CUSTOM_DIR%\%CUSTOM_FILENAME%' '%CUSTOM_URL%'"
+    ) else if "%DOWNLOAD_METHOD%"=="3" (
+        set "DOWNLOAD_CMD=wget -O '%CUSTOM_DIR%\%CUSTOM_FILENAME%' '%CUSTOM_URL%'"
+    )
 
-:: Èç¹ûÎÄ¼şÃûÎª¿Õ£¬ÔòÌáÊ¾ÓÃ»§
-if "!FILE_NAME!"=="" (
-    echo Á´½ÓÖĞÃ»ÓĞ°üº¬ÎÄ¼şÃû£¬ÏÂÔØÊ§°Ü¡£
-    pause
-    goto input_custom_info
-)
+:: è¯·æ±‚ç”¨æˆ·è¾“å…¥è‡ªå®šä¹‰ä¸‹è½½é“¾æ¥
+:input_custom_url
+    echo.
+    echo è¯·è¾“å…¥è‡ªå®šä¹‰ä¸‹è½½é“¾æ¥ï¼ˆä¾‹å¦‚ï¼šhttp://example.com/file.zipï¼‰: 
+    set /P CUSTOM_URL=
+    if "%CUSTOM_URL%"=="" goto input_custom_url_empty
 
-:: Èç¹ûÎÄ¼şÃû³¤¶È´óÓÚ18¸ö×Ö·û£¬ÔòÊ¹ÓÃ¹Ì¶¨ÎÄ¼şÃûÇ°×º£¬²¢±£ÁôÔ­Ê¼ºó×º
-if "!FILE_NAME:~,19!" neq "" (
-    set "ORIGINAL_SUFFIX=!FILE_NAME:~-3!" 
-    set "FILE_NAME=ÏÂÔØµÄÎÄ¼ş.!ORIGINAL_SUFFIX!"
-) else (
-    set "ORIGINAL_SUFFIX=!FILE_NAME:~-3!"
-)
+:: ä» URL ä¸­æå–æ–‡ä»¶å
+    for /f "tokens=1* delims=/" %%a in ("%CUSTOM_URL%") do set "FILE_NAME=%%b"
+    call :trim_filename
 
-echo ====================================================================== 
-echo ÄúÊäÈëµÄÏÂÔØÁ´½ÓÊÇ: !CUSTOM_URL!
-echo ====================================================================== 
-echo ÏÂÔØµÄÎÄ¼şÃûÊÇ: !FILE_NAME!
-echo ====================================================================== 
-
-:: ÌáÊ¾ÓÃ»§ÊÇ·ñ×Ô¶¨ÒåÎÄ¼şÃû
-choice /C YN /M "ÊÇ·ñÏ£Íû×Ô¶¨ÒåÎÄ¼şÃû?(Y/N):" 
-if errorlevel 2 goto use_default_filename
-if errorlevel 1 goto set_custom_filename
-
-:set_custom_filename
-:: ÓÃ»§Ñ¡Ôñ×Ô¶¨ÒåÎÄ¼şÃû
-echo ÇëÊäÈëÄúÏ£ÍûÊ¹ÓÃµÄÎÄ¼şÃû£¬°üÀ¨ÎÄ¼şºó×º£¨ÀıÈç£ºmy_custom_file.zip£©:
-set /P "CUSTOM_FILENAME="
-if "!CUSTOM_FILENAME!"=="" (
-    echo ÓÃ»§Î´ÊäÈëÎÄ¼şÃû£¬½«Ê¹ÓÃÄ¬ÈÏÎÄ¼şÃû¡£
-    set "CUSTOM_FILENAME=!FILE_NAME!"
-) else (
-    :: Çå³ıÔ­Ê¼ºó×º£¬ÒòÎªÓÃ»§ÒÑÌá¹©ĞÂÎÄ¼şÃû
-    set "ORIGINAL_SUFFIX="
-)
-goto after_filename_choice
+:: è¯·æ±‚ç”¨æˆ·è‡ªå®šä¹‰æ–‡ä»¶å
+:input_custom_filename
+    echo.
+    choice /C YN /M "æ˜¯å¦å¸Œæœ›è‡ªå®šä¹‰æ–‡ä»¶å?(Y/N):"
+    if errorlevel 2 goto use_default_filename
+    set /P CUSTOM_FILENAME=è¯·è¾“å…¥æ‚¨å¸Œæœ›ä½¿ç”¨çš„æ–‡ä»¶åï¼ŒåŒ…æ‹¬æ–‡ä»¶åç¼€ï¼ˆä¾‹å¦‚ï¼šä¸‹è½½çš„æ–‡ä»¶.zipï¼‰:
+    goto input_custom_dir
 
 :use_default_filename
-:: ÓÃ»§Ñ¡ÔñÊ¹ÓÃÄ¬ÈÏÎÄ¼şÃû
-set "CUSTOM_FILENAME=!FILE_NAME!"
+    set "CUSTOM_FILENAME=%FILE_NAME%"
 
-:after_filename_choice
-set "FILE_NAME=!CUSTOM_FILENAME!"
-echo ÄúÑ¡ÔñµÄÎÄ¼şÃûÊÇ: !CUSTOM_FILENAME!
+:: è¯·æ±‚ç”¨æˆ·è‡ªå®šä¹‰ä¸‹è½½ç›®å½•
+:input_custom_dir
+    echo.
+    echo è¯·è¾“å…¥ä¸‹è½½æ–‡ä»¶çš„ä¿å­˜ç›®å½•ï¼ˆé»˜è®¤ä¸º "%CUSTOM_DIR%"ï¼Œç›´æ¥æŒ‰å›è½¦ä½¿ç”¨é»˜è®¤ï¼‰:
+    set /P CUSTOM_DIR=
+    if "%CUSTOM_DIR%"=="" set "CUSTOM_DIR=%USER_Downloads_INSTALL_DIR%"
 
-:: ÌáÊ¾ÓÃ»§ÊäÈëÏÂÔØÎÄ¼şµÄ±£´æÄ¿Â¼£¬»ò°´ [Y] Ê¹ÓÃÄ¬ÈÏÄ¿Â¼
-echo ÇëÊäÈëÏÂÔØÎÄ¼şµÄ±£´æÄ¿Â¼£¬Ä¬ÈÏÄ¿Â¼: "%Downloads_INSTALL_DIR%":
-choice /C YN /M "ÊÇ·ñÊ¹ÓÃÄ¬ÈÏÄ¿Â¼?(Y/N):" 
-if errorlevel 2 goto set_custom_dir
-if errorlevel 1 goto use_default_dir
+:: æ£€æŸ¥ä¸‹è½½ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœä¸å­˜åœ¨åˆ™åˆ›å»º
+    if not exist "%CUSTOM_DIR%" mkdir "%CUSTOM_DIR%"
 
-:set_custom_dir
-:: ÓÃ»§Ñ¡Ôñ×Ô¶¨ÒåÄ¿Â¼
-set /P "CUSTOM_DIR=ÇëÊäÈëÄ¿Â¼Â·¾¶:"
-if "!CUSTOM_DIR!"=="" (
-    echo ÓÃ»§Î´ÊäÈëÄ¿Â¼£¬½«Ê¹ÓÃÄ¬ÈÏÄ¿Â¼¡£
-    set "CUSTOM_DIR=%Downloads_INSTALL_DIR%"
-)
-goto after_dir_choice
+:: æ‰§è¡Œä¸‹è½½
+    echo.
+    echo æ­£åœ¨ä¸‹è½½æ–‡ä»¶ "%CUSTOM_FILENAME%" åˆ° "%CUSTOM_DIR%" ç›®å½•...
+    for /f "delims=" %%c in ('%DOWNLOAD_CMD%') do set "LAST_ERROR=%%c"
+    if "%LAST_ERROR%" neq "0" (
+        echo ä¸‹è½½å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥å’Œé“¾æ¥æœ‰æ•ˆæ€§ã€‚
+        pause
+        goto after_action
+    )
+    echo ä¸‹è½½æˆåŠŸã€‚
 
-:use_default_dir
-:: ÓÃ»§Ñ¡ÔñÊ¹ÓÃÄ¬ÈÏÄ¿Â¼
-set "CUSTOM_DIR=%Downloads_INSTALL_DIR%"
+:: åˆ›å»ºæ¡Œé¢å¿«æ·æ–¹å¼
+    echo æ­£åœ¨ä¸ºä¸‹è½½æ–‡ä»¶å¤¹åˆ›å»ºå¿«æ·æ–¹å¼åˆ°æ¡Œé¢...
+    set "DESKTOP_PATH=%USERPROFILE%\Desktop"
+    set "SHORTCUT_NAME=OpenDownloadFolder.lnk"
+    set "SHORTCUT_PATH=%DESKTOP_PATH%\%SHORTCUT_NAME%"
+    if exist "%SHORTCUT_PATH%" del "%SHORTCUT_PATH%"
+    if not exist "%DESKTOP_PATH%" mkdir "%DESKTOP_PATH%"
+    powershell -Command "$WScriptShell = New-Object -ComObject WScript.Shell; $Shortcut = $WScriptShell.CreateShortcut('%SHORTCUT_PATH%'); $Shortcut.TargetPath = '%CUSTOM_DIR%'; $Shortcut.Save;"
 
-:after_dir_choice
-echo ÄúÑ¡ÔñµÄÄ¿Â¼ÊÇ: !CUSTOM_DIR!
-
-:: ¼ì²éÏÂÔØÄ¿Â¼ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔò´´½¨
-if not exist "!CUSTOM_DIR!" mkdir "!CUSTOM_DIR!"
-
-:: ¸ù¾İÓÃ»§Ñ¡ÔñµÄÏÂÔØ·½Ê½½øĞĞÏÂÔØ
-if "%download_choice%"=="1" (
-    goto :single_thread_download_custom
-) else if "%download_choice%"=="2" (
-    goto :multi_thread_download_with_curl_custom
-) else if "%download_choice%"=="3" (
-    goto :multi_thread_download_with_wget_custom
-) else (
-    echo ÎŞĞ§µÄÊäÈë£¬ÇëÑ¡Ôñ1µ½3Ö®¼äµÄÊı×Ö¡£
-    pause
-    goto custom_download
-)
-
-:: Ê¹ÓÃpowershell½øĞĞµ¥Ïß³ÌÏÂÔØ£¨×Ô¶¨Òå£©
-:single_thread_download_custom
-set "USER_DEFINED_NAME=%~2"  :: ¼ÙÉèÓÃ»§×Ô¶¨ÒåµÄÎÄ¼şÃû×÷Îª±êÇ©µÄµÚ¶ş¸ö²ÎÊı´«µİ
-if not defined USER_DEFINED_NAME (
-    echo Ê¹ÓÃµÄÎÄ¼şÃûÎª£º%FILE_NAME%¡£
-    set "USER_DEFINED_NAME=%FILE_NAME%"
-)
-
-echo ÕıÔÚÊ¹ÓÃµ¥Ïß³ÌÏÂÔØÎÄ¼ş "!USER_DEFINED_NAME!"£¬ÇëÉÔºò...
-powershell -Command "Invoke-WebRequest -Uri '%CUSTOM_URL%' -OutFile '%CUSTOM_DIR%\!USER_DEFINED_NAME!' -Verbose"
-if errorlevel 1 (
-    echo µ¥Ïß³ÌÏÂÔØÊ§°Ü£¬Çë¼ì²éÍøÂçÁ¬½ÓºÍÁ´½ÓÓĞĞ§ĞÔ¡£
+    echo å¿«æ·æ–¹å¼ '%SHORTCUT_NAME%' å·²åˆ›å»ºåœ¨æ¡Œé¢ä¸­ã€‚
+    echo åŒå‡»è¯¥å¿«æ·æ–¹å¼å°†æ‰“å¼€ä¸‹è½½æ–‡ä»¶å¤¹ã€‚
+    echo æ‚¨ä¹Ÿå¯ä»¥æ‰‹åŠ¨æ‰“å¼€èµ„æºç®¡ç†å™¨å¹¶å¯¼èˆªåˆ°ä»¥ä¸‹è·¯å¾„ï¼š
+    echo %CUSTOM_DIR%
     pause
     goto after_action
-)
-echo µ¥Ïß³ÌÏÂÔØ³É¹¦¡£
-goto after_download_custom
 
-:: Ê¹ÓÃcurl½øĞĞ¶àÏß³ÌÏÂÔØ£¨×Ô¶¨Òå£©
-:multi_thread_download_with_curl_custom
-set "USER_DEFINED_NAME=%~2"  :: ÓÃ»§×Ô¶¨ÒåµÄÎÄ¼şÃû×÷ÎªµÚ¶ş¸ö²ÎÊı
-if not defined USER_DEFINED_NAME (
-    echo Ê¹ÓÃµÄÎÄ¼şÃûÎª£º%FILE_NAME%¡£
-    set "USER_DEFINED_NAME=!FILE_NAME!"
-)
+:: å»é™¤æ–‡ä»¶åå‰åçš„ç©ºç™½å­—ç¬¦
+:trim_filename
+    set "FILE_NAME=%FILE_NAME: =%"
+    exit /b
 
-echo ÕıÔÚÊ¹ÓÃcurl½øĞĞ¶àÏß³ÌÏÂÔØÎÄ¼ş "!USER_DEFINED_NAME!"£¬ÇëÉÔºò...
-curl -o "!CUSTOM_DIR!\!USER_DEFINED_NAME!" "!CUSTOM_URL!"
-if !ERRORLEVEL! neq 0 (
-    echo ÏÂÔØÊ§°Ü£¬¿ÉÄÜÊÇÍøÂçÎÊÌâ»òÎÄ¼ş²»´æÔÚ£¬Çë¼ì²éºóÖØÊÔ¡£
+:input_custom_url_empty
+    echo é“¾æ¥ä¸èƒ½ä¸ºç©ºï¼Œè¯·è¾“å…¥æœ‰æ•ˆçš„ä¸‹è½½é“¾æ¥ã€‚
     pause
-    goto after_action
-)
-echo ÏÂÔØÍê³É¡£
-goto after_download_custom
+    goto input_custom_url
 
-:: Ê¹ÓÃwget½øĞĞ¶àÏß³ÌÏÂÔØ£¨×Ô¶¨Òå£©
-:multi_thread_download_with_wget_custom
-set "USER_DEFINED_NAME=%~2"  :: ÓÃ»§×Ô¶¨ÒåµÄÎÄ¼şÃû×÷ÎªµÚ¶ş¸ö²ÎÊı
-if not defined USER_DEFINED_NAME (
-    echo Ê¹ÓÃµÄÎÄ¼şÃûÎª£º%FILE_NAME%¡£
-    set "USER_DEFINED_NAME=!FILE_NAME!"
-)
+:: å¸è½½è½¯ä»¶çš„å‡½æ•°
+:uninstall_software
+    set "app_name=%~1"
+    set "install_dir=%~2"
+    echo æ­£åœ¨å°è¯•å¸è½½ %app_name%...
+    taskkill /IM "%app_name%.exe" /F /T >nul 2>&1
+    if !ERRORLEVEL! equ 0 (
+        echo è¿›ç¨‹ %app_name%.exe å·²æˆåŠŸç»“æŸã€‚
+    ) else (
+        echo æ— æ³•ç»“æŸè¿›ç¨‹ %app_name%.exeï¼Œå¯èƒ½éœ€è¦æ‰‹åŠ¨ç»“æŸæˆ–é‡å¯è®¡ç®—æœºã€‚
+    )
 
-echo ÕıÔÚÊ¹ÓÃwget½øĞĞ¶àÏß³ÌÏÂÔØÎÄ¼ş "!USER_DEFINED_NAME!"£¬ÇëÉÔºò...
-wget -O "!CUSTOM_DIR!\!USER_DEFINED_NAME!" "!CUSTOM_URL!"
-if errorlevel 1 (
-    echo ÏÂÔØÊ§°Ü£¬¿ÉÄÜÊÇÍøÂçÎÊÌâ»òÎÄ¼ş²»´æÔÚ£¬Çë¼ì²éºóÖØÊÔ¡£
-    pause
-    goto after_action
-)
-echo ÏÂÔØÍê³É¡£
-goto after_download_custom
+    rmdir /S /Q "%install_dir%" >nul 2>&1
+    if exist "%install_dir%" (
+        echo ç›®å½• %install_dir% åˆ é™¤å¤±è´¥ï¼Œå¯èƒ½éœ€è¦æ‰‹åŠ¨åˆ é™¤æˆ–æ£€æŸ¥æƒé™ã€‚
+    ) else (
+        echo ç›®å½• %install_dir% å·²æˆåŠŸåˆ é™¤ã€‚
+    )
+goto :eof
 
-:: ×Ô¶¨ÒåÏÂÔØÍê³ÉºóµÄ²Ù×÷
-:after_download_custom
-echo ×Ô¶¨ÒåÏÂÔØµÄÎÄ¼ş "%FILE_NAME%" ÒÑ±£´æµ½ "%CUSTOM_DIR%"¡£
-echo ÕıÔÚÎªÏÂÔØÎÄ¼ş¼Ğ´´½¨¿ì½İ·½Ê½µ½×ÀÃæ...
-
-:: ¶¨Òå×ÀÃæÂ·¾¶ºÍ¿ì½İ·½Ê½ÎÄ¼şÃû
-set "DESKTOP_PATH=%USERPROFILE%\Desktop"
-set "SHORTCUT_NAME=OpenDownloadFolder.lnk"  ;; ¿ì½İ·½Ê½µÄÎÄ¼şÃû
-
-:: ¼ì²é×ÀÃæÂ·¾¶ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔòÊ¹ÓÃÄ¬ÈÏÂ·¾¶
-if not exist "!DESKTOP_PATH!" (
-    set "DESKTOP_PATH=C:\Users\Default\Desktop"
-)
-
-:: ´´½¨¿ì½İ·½Ê½£¬Ö¸ÏòCUSTOM_DIRÄ¿Â¼
-set "SHORTCUT_PATH=!DESKTOP_PATH!\!SHORTCUT_NAME!"
-if exist "!SHORTCUT_PATH!" del "!SHORTCUT_PATH!"
-
-:: Ê¹ÓÃ PowerShell ´´½¨¿ì½İ·½Ê½
-powershell -Command "$WScriptShell = New-Object -ComObject WScript.Shell; $Shortcut = $WScriptShell.CreateShortcut('!SHORTCUT_PATH!'); $Shortcut.TargetPath = '%CUSTOM_DIR%'; $Shortcut.Save;"
-
-echo ¿ì½İ·½Ê½ '!SHORTCUT_NAME!' ÒÑ´´½¨ÔÚ×ÀÃæÖĞ¡£
-echo Ë«»÷¸Ã¿ì½İ·½Ê½½«´ò¿ªÏÂÔØÎÄ¼ş¼Ğ¡£
-echo ÄúÒ²¿ÉÒÔÊÖ¶¯´ò¿ª×ÊÔ´¹ÜÀíÆ÷²¢µ¼º½µ½ÒÔÏÂÂ·¾¶£º
-echo %CUSTOM_DIR%
-pause
-goto after_action
-
-:: Ğ¶ÔØËùÓĞÈí¼ş£¨½áÊø½ø³Ì²¢É¾³ıÄ¿Â¼£©
+:: å¸è½½æ‰€æœ‰è½¯ä»¶ï¼ˆç»“æŸè¿›ç¨‹å¹¶åˆ é™¤ç›®å½•ï¼‰
 :uninstall_all
-echo ======================================================================
-echo ¾¯¸æ£º´Ë²Ù×÷½«½áÊøÏà¹ØÈí¼şµÄ½ø³Ì£¬²¢É¾³ıËüÃÇµÄ°²×°Ä¿Â¼¡£
-set /P confirm=ÄúÈ·¶¨Òª¼ÌĞøÂğ£¿(ÊäÈëY¼ÌĞø£¬NÍË³ö): 
+    echo è­¦å‘Šï¼šæ­¤æ“ä½œå°†ç»“æŸç›¸å…³è½¯ä»¶çš„è¿›ç¨‹ï¼Œå¹¶åˆ é™¤å®ƒä»¬çš„å®‰è£…ç›®å½•ã€‚
+    set /P confirm=æ‚¨ç¡®å®šè¦ç»§ç»­å—ï¼Ÿ(è¾“å…¥Yç»§ç»­ï¼ŒNé€€å‡º):
 
-if /I "%confirm%"=="Y" (
-    echo ÕıÔÚ×¼±¸Ğ¶ÔØËùÓĞÈí¼ş£¬ÇëÉÔºò...
+    if /I "%confirm%"=="Y" (
+        echo æ­£åœ¨å‡†å¤‡å¸è½½æ‰€æœ‰è½¯ä»¶ï¼Œè¯·ç¨å€™...
 
-    :: ¶¨ÒåÒªĞ¶ÔØµÄÈí¼ş¼°Æä°²×°Ä¿Â¼
-    set "SOFTWARE_LIST=(ClassIsland, %ClassIsland_INSTALL_DIR%) (Downloads, %Downloads_INSTALL_DIR%) (ÖÇ»æ½Ì, %ZHIHUIJIAO_INSTALL_DIR%)"
+        :: å®šä¹‰è¦å¸è½½çš„è½¯ä»¶åŠå…¶å®‰è£…ç›®å½•
+        set "software_list[1]=ClassIsland ClassIsland_INSTALL_DIR"
+        set "software_list[2]=Downloads DOWNLOADS_DIR"
+        set "software_list[3]=æ™ºç»˜æ•™ ZHIHUIJIAO_DIR"
 
-    :: ¶¨ÒåÒª½áÊøµÄ½ø³ÌÁĞ±í
-    set "PROCESS_LIST=ClassIsland.exe, windowsdesktop-runtime-8.0.7-win-x64.exe, ÖÇ»æ½Ì.exe"
+        :: å®šä¹‰è¦ç»“æŸçš„è¿›ç¨‹åˆ—è¡¨
+        set "process_list=ClassIsland.exe windowsdesktop-runtime-8.0.7-win-x64.exe æ™ºç»˜æ•™.exe"
 
-    :: ³¢ÊÔ½áÊøËùÓĞÏà¹Ø½ø³Ì
-    for %%p in (%PROCESS_LIST%) do (
-        taskkill /IM "%%p" /F /T 2>nul
-        if !ERRORLEVEL! equ 0 (
-            echo ³É¹¦½áÊø½ø³Ì %%p¡£
-        ) else (
-            echo ÎŞ·¨½áÊø½ø³Ì %%p£¬¿ÉÄÜĞèÒªÊÖ¶¯½áÊø»òÖØÆô¼ÆËã»ú¡£
+        :: å°è¯•ç»“æŸæ‰€æœ‰ç›¸å…³è¿›ç¨‹
+        for %%p in (%process_list%) do (
+            taskkill /IM "%%p" /F /T
+            if !ERRORLEVEL! equ 0 (
+                echo æˆåŠŸç»“æŸè¿›ç¨‹ %%pã€‚
+            ) else (
+                echo æ— æ³•ç»“æŸè¿›ç¨‹ %%pï¼Œå¯èƒ½éœ€è¦æ‰‹åŠ¨ç»“æŸæˆ–é‡å¯è®¡ç®—æœºã€‚
+            )
         )
-    )
 
-    :: É¾³ıÈí¼ş°²×°Ä¿Â¼
-    for %%a in (%SOFTWARE_LIST%) do (
-        set "NAME=%%a"
-        set "DIR=!NAME:*,=!"
-        set "NAME=!NAME:%%DIR%=!"
-        
-        echo ÕıÔÚ³¢ÊÔÉ¾³ıÄ¿Â¼ "!DIR!" ...
-        rmdir /S /Q "!DIR!"
-        if !ERRORLEVEL! equ 0 (
-            echo Ä¿Â¼ "!DIR!" ÒÑ³É¹¦É¾³ı¡£
-        ) else (
-            echo Ä¿Â¼ "!DIR!" É¾³ıÊ§°Ü£¬¿ÉÄÜĞèÒªÊÖ¶¯É¾³ı»ò¼ì²éÈ¨ÏŞ¡£
+        :: åˆ é™¤è½¯ä»¶å®‰è£…ç›®å½•
+        for /L %%i in (1,1,3) do (
+            set "app_info=!software_list[%%i]!"
+            for /f "tokens=1* delims= " %%a in ("!app_info!") do (
+                set "app_name=%%a"
+                set "app_dir=%%b"
+                call :uninstall_software "!app_name!" "!app_dir!"
+            )
         )
-    )
 
-    echo ËùÓĞÈí¼şµÄĞ¶ÔØ²Ù×÷ÒÑÍê³É¡£
-    echo Çë¼ì²éÉÏÊöÊä³öÒÔÈ·ÈÏËùÓĞ²Ù×÷ÊÇ·ñ³É¹¦Íê³É¡£
-    echo Èç¹ûÓĞÄ¿Â¼»òÎÄ¼şÎ´ÄÜÉ¾³ı£¬ÇëÊÖ¶¯¼ì²é²¢½â¾ö¡£
-    echo ======================================================================
-    pause
-    goto after_action
-) else (
-    echo Ğ¶ÔØ²Ù×÷ÒÑÈ¡Ïû¡£
-    echo ======================================================================
-    pause
-    goto after_action
-)
+        echo æ‰€æœ‰è½¯ä»¶çš„å¸è½½æ“ä½œå·²å®Œæˆã€‚
+        echo è¯·æ£€æŸ¥ä¸Šè¿°è¾“å‡ºä»¥ç¡®è®¤æ‰€æœ‰æ“ä½œæ˜¯å¦æˆåŠŸå®Œæˆã€‚
+        echo å¦‚æœæœ‰ç›®å½•æˆ–æ–‡ä»¶æœªèƒ½åˆ é™¤ï¼Œè¯·æ‰‹åŠ¨æ£€æŸ¥å¹¶è§£å†³ã€‚
+        pause
+        goto after_action
+    ) else (
+        echo å¸è½½æ“ä½œå·²å–æ¶ˆã€‚
+        pause
+        goto after_action
+    )
+goto after_action
 
 :about
-echo °´ÈÎÒâ¼ü·ÃÎÊ GitHub ²Ö¿â...
+echo æŒ‰ä»»æ„é”®è®¿é—® GitHub ä»“åº“...
 pause >nul
 start https://github.com/lzy98276/LZY-Toolbox
-goto after_action
+goto exit
 
 
 
-:: Ö´ĞĞ²Ù×÷ºóÑ¯ÎÊÓÃ»§ÊÇ·ñ¼ÌĞø
+:: æ‰§è¡Œæ“ä½œåè¯¢é—®ç”¨æˆ·æ˜¯å¦ç»§ç»­
 :after_action
-set /P continue=ÊÇ·ñ·µ»ØÖ÷Ò³Ö´ĞĞÆäËû²Ù×÷£¿(ÊäÈëY¼ÌĞø£¬NÍË³ö): 
+set /P continue=æ˜¯å¦è¿”å›ä¸»é¡µæ‰§è¡Œå…¶ä»–æ“ä½œï¼Ÿ(è¾“å…¥Yç»§ç»­ï¼ŒNé€€å‡º): 
 if /I "%continue%"=="Y" (
     cls
     goto choice_prompt
@@ -606,11 +498,11 @@ if /I "%continue%"=="Y" (
 if /I "%continue%"=="N" (
     goto exit
 )
-echo ÎŞĞ§µÄÊäÈë£¬ÇëÊäÈëY»òN¡£
+echo æ— æ•ˆçš„è¾“å…¥ï¼Œè¯·è¾“å…¥Yæˆ–Nã€‚
 pause
 goto after_action
 
-:: ÍË³ö³ÌĞò
+:: é€€å‡ºç¨‹åº
 :exit
-echo ÍË³ö³ÌĞò¡£
+echo é€€å‡ºç¨‹åºã€‚
 endlocal
